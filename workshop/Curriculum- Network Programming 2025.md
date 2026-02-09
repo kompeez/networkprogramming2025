@@ -5,19 +5,20 @@ Course Philosophy
 Networks are not cables and boxes. They are agreements under uncertainty. Each week, you will build one agreement in Python—simple first, then fragile, then strange.
 You already know IP addressing and routing. Now we program behavior.
 
-WEEK 1 – BASIC: Client–Server Communication (TCP Unicast)
-Overview
+## WEEK 1 – TCP Client–Server Communication (Unicast)
+
+### Overview
 This lab introduces socket programming through the most fundamental network model: client–server communication. One side listens. One side asks. Nobody panics.
 Learning Outcome / Trait Assessment
 Understand TCP client–server architecture
 Implement blocking socket communication
 Relate TCP reliability to application behavior
 Traits: Structured thinking, protocol discipline, debugging network state
-Key Concepts
+### Key Concepts
 TCP sockets
 Bind, listen, accept, connect
 Request–response pattern
-BASIC LAB (Step-by-Step)
+### Basic Lab Steps
 Create a TCP server socket
 Bind to a local port
 Listen for incoming connections
@@ -26,9 +27,9 @@ Receive a message
 Send a response
 Close the connection
 Students verify success using loopback (127.0.0.1).
-Expected Output
+### Expected Output
 Client sends text → Server responds with acknowledgment
-Common Mistakes
+### Common Mistakes
 Forgetting to listen()
 Port already in use
 Blocking forever on recv()
@@ -37,12 +38,14 @@ Add multiple clients (threading)
 Add simple authentication
 Transition to asyncio
 
-EXTRA LAB: Mini Chat Server
-Scenario: Build a helpdesk chat server where multiple clients can connect sequentially.
-Real-world mapping: Call centers, ticketing systems
+### Extra Lab: Mini Chat Server
 
-WEEK 2 – BASIC: UDP Communication (Connectionless Unicast)
-Overview
+**Scenario**: Build a helpdesk chat server where multiple clients can connect sequentially.
+**Real-world mapping**: Call centers, ticketing systems
+
+## WEEK 2 – UDP Communication (Connectionless Unicast)
+
+### Overview
 This week removes the safety net. No connection. No guarantees. Just packets and hope.
 Learning Outcome / Trait Assessment
 Compare TCP vs UDP
@@ -54,141 +57,197 @@ Create UDP socket
 Send datagram to receiver
 Receive datagram
 Print sender address
-Discussion Point
+### Discussion Point
 Why DNS, VoIP, and games choose UDP.
 Future Extension
 Add sequence numbers
 Implement reliability manually
 
-EXTRA LAB: Sensor Data Stream
-Scenario: Simulate IoT sensors streaming temperature data without retransmission.
+### Extra Lab: Sensor Data Stream
 
-WEEK 3 – BASIC: Broadcast Communication
-Overview
+**Scenario**: Simulate IoT sensors streaming temperature data without retransmission.
+
+## WEEK 3 – Broadcast Communication
+
+### Overview
 Broadcast is shouting. Useful. Dangerous. Educational.
-Learning Outcome
-Understand LAN broadcast scope
-Implement broadcast discovery
-BASIC LAB
-Enable broadcast socket option
-Send discovery message
-Receive broadcast on listener
-Real-World Usage
-DHCP
-Service discovery
-Future Extension
-Add discovery timeout
-Compare with multicast
+### Learning Outcomes
 
-EXTRA LAB: Network Service Discovery Tool
+- Understand LAN broadcast scope
+- Implement broadcast discovery
+
+### Basic Lab
+
+- Enable broadcast socket option
+- Send discovery message
+- Receive broadcast on listener
+
+### Real-World Usage
+- DHCP
+- Service discovery
+
+### Future Extension
+- Add discovery timeout
+- Compare with multicast
+
+### Extra Lab: Network Service Discovery Tool
+
 Students build a tool that discovers active nodes on a LAN.
 
-WEEK 4 – BASIC: Multicast Communication
-Overview
-Multicast introduces group membership. You listen only if you care.
-Learning Outcome
-Join multicast groups
-Differentiate multicast vs broadcast
-BASIC LAB
-Join multicast address
-Send multicast message
-Receive group data
-Future Extension
-Video streaming simulation
-Pub/Sub model
+## WEEK 4 – Multicast Communication
 
-EXTRA LAB: Classroom Announcement System
+### Overview
+Multicast introduces group membership. You listen only if you care.
+### Learning Outcomes
+
+- Join multicast groups
+- Differentiate multicast vs broadcast
+
+### Basic Lab
+
+- Join multicast address
+- Send multicast message
+- Receive group data
+
+### Future Extension
+
+- Video streaming simulation
+- Pub/Sub model
+
+### Extra Lab: Classroom Announcement System
+
 One sender, many listeners, opt-in only.
 
-WEEK 5 – BASIC: Peer-to-Peer Networking
-Overview
-No server. Everyone pulls their own weight.
-Learning Outcome
-Build symmetric network roles
-Handle dynamic ports
-BASIC LAB
-Node acts as server and client
-Exchange peer messages
-Future Extension
-Peer discovery
-NAT discussion
+## WEEK 5 – Peer-to-Peer Networking
 
-EXTRA LAB: File Sharing Prototype
+### Overview
+No server. Everyone pulls their own weight.
+### Learning Outcomes
+
+- Build symmetric network roles
+- Handle dynamic ports
+
+### Basic Lab
+
+- Node acts as server and client
+- Exchange peer messages
+
+### Future Extension
+
+- Peer discovery
+- NAT discussion
+
+### Extra Lab: File Sharing Prototype
+
 Simulate BitTorrent-style peer exchange (no tracker yet).
 
-WEEK 6 – BASIC: Ad-Hoc Networking (MANET Simulation)
-Overview
-Infrastructure disappears. Nodes improvise.
-Learning Outcome
-Simulate neighbor discovery
-Forward packets probabilistically
-BASIC LAB
-Maintain neighbor table
-Forward packets with TTL
-Future Extension
-AODV / OLSR concepts
+## WEEK 6 – Ad-Hoc Networking (MANET)
 
-EXTRA LAB: Disaster Response Mesh
+### Overview
+Infrastructure disappears. Nodes improvise.
+### Learning Outcomes
+
+- Simulate neighbor discovery
+- Forward packets probabilistically
+
+### Basic Lab
+
+- Maintain neighbor table
+- Forward packets with TTL
+
+### Future Extension
+
+- AODV / OLSR concepts
+
+### Extra Lab: Disaster Response Mesh
+
 Nodes form a temporary rescue network.
 
-WEEK 7 – BASIC: Store-and-Forward Communication
-Overview
-When links fail, memory becomes the network.
-Learning Outcome
-Implement message queues
-Retry logic
-BASIC LAB
-Detect link availability
-Store messages
-Forward later
-Future Extension
-Persistent storage
+## WEEK 7 – Store-and-Forward Communication
 
-EXTRA LAB: Planetary Email System
+### Overview
+When links fail, memory becomes the network.
+### Learning Outcomes
+
+- Implement message queues
+- Retry logic
+
+### Basic Lab
+
+- Detect link availability
+- Store messages
+- Forward later
+
+### Future Extension
+
+- Persistent storage
+
+### Extra Lab: Planetary Email System
+
 Messages arrive minutes later. Students wait. Philosophically.
 
-WEEK 8 – BASIC: Opportunistic Routing
-Overview
-Forward packets based on probability, not certainty.
-Learning Outcome
-Decision-based forwarding
-Encounter-based routing
-BASIC LAB
-Maintain delivery probability
-Forward when advantageous
-Future Extension
-Epidemic routing
+## WEEK 8 – Opportunistic Routing
 
-EXTRA LAB: Wildlife Tracking Network
+### Overview
+Forward packets based on probability, not certainty.
+### Learning Outcomes
+
+- Decision-based forwarding
+- Encounter-based routing
+
+### Basic Lab
+
+- Maintain delivery probability
+- Forward when advantageous
+
+### Future Extension
+
+- Epidemic routing
+
+### Extra Lab: Wildlife Tracking Network
+
 Mobile nodes exchange data when paths cross.
 
-WEEK 9 – ADVANCED: Bio-Inspired Networking
-Overview
+## WEEK 9 – Bio-Inspired Networking
+
+### Overview
 Ants route better than we do. Deal with it.
-Learning Outcome
-Reinforcement routing
-Adaptive path selection
-BASIC LAB
+### Learning Outcomes
+
+- Reinforcement routing
+- Adaptive path selection
+
+### Basic Lab
+
 Simulate pheromone-based routing tables.
-EXTRA LAB
+
+### Extra Lab
+
 Self-healing network simulation.
 
-WEEK 10 – ADVANCED: Quantum-Inspired Networking (Conceptual)
-Overview
+## WEEK 10 – Quantum-Inspired Networking (Conceptual)
+
+### Overview
 No quantum hardware. Still quantum thinking.
-Learning Outcome
-No-cloning constraint
-State collapse modeling
-BASIC LAB
+### Learning Outcomes
+
+- No-cloning constraint
+- State collapse modeling
+
+### Basic Lab
+
 One-time-read message tokens.
-EXTRA LAB
+
+### Extra Lab
+
 Quantum-secure messenger simulation.
 
-CAPSTONE OPTIONS
+## Capstone Options
 Disaster Mesh Network
 Bio-routing Simulator
 Delay-Tolerant Space Network
 
 Final Note to Students
 If your program never fails, it’s lying.
+
 
