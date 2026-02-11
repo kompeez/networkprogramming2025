@@ -5,7 +5,7 @@ import socket
 from config import HOST, PORT
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-message = "Hello via UDP"
-
+#message = "Hello via UDP"
+message = "Hello world"
 sock.sendto(message.encode(), (HOST, PORT))
 print("[SENDER] Message sent")
